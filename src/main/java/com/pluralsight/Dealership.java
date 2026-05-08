@@ -67,14 +67,14 @@ public class Dealership {
 
     }
     public ArrayList<Vehicle>getAllVehicles(){
-        return null;
+        return this.inventory;
     }
 
     public void addVehicle(vehicle) {
         this.inventory.add(vehicle);
     }
     public void remove(vehicle){
-        this.inventory.remove(vehicle);
+
     }
 }
 
