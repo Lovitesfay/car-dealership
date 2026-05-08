@@ -42,31 +42,37 @@ public class Dealership {
     }
 
     public ArrayList<Vehicle>getVehiclesByPrice() {
-        return null;
-
+        getVehiclesByPrice();
+    return this.inventory;
     }
 
     public ArrayList<Vehicle>getVehiclesByMakeModel() {
-        return null;
+        getVehiclesByMakeModel();
+        return this.inventory;
     }
 
     public ArrayList<Vehicle>getVehicleByYear() {
-        return null;
+        getVehicleByYear();
+        return this.inventory;
     }
 
     public ArrayList<Vehicle>getVehiclesByColor() {
-        return null;
+        getVehiclesByColor();
+        return this.inventory;
     }
 
     public ArrayList<Vehicle>getVehiclesByMileage() {
-        return null;
+        getVehiclesByMileage();
+        return this.inventory;
 
     }
     public ArrayList<Vehicle>getVehicleByType(){
-        return null;
+        getVehicleByType();
+        return this.inventory;
 
     }
     public ArrayList<Vehicle>getAllVehicles(){
+       getAllVehicles();
         return this.inventory;
     }
 
@@ -74,6 +80,7 @@ public class Dealership {
         this.inventory.add(vehicle);
     }
     public void remove(Vehicle vehicle){
+        this.inventory.remove(vehicle);
 
     }
 }
