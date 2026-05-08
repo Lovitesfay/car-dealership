@@ -88,8 +88,17 @@ public static Scanner input = new Scanner(System.in);
     }
 
     public void processGetByPriceRequest(){
-        System.out.println("list of Vehicles by price");
+        System.out.println("Enter minimum price: ");
+        double min = input.nextDouble();
 
+        System.out.println("Enter maximum price: ");
+        double max = input.nextDouble();
+
+        ArrayList<Vehicle>vehicles = dealership.getVehiclesByPrice( min, max);
+
+        for (Vehicle vehicle: vehicles){
+            System.out.println(vehicle);
+        }
 
 
     }
