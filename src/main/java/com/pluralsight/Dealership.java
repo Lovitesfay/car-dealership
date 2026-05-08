@@ -70,10 +70,10 @@ public class Dealership {
         return this.inventory;
     }
 
-    public void addVehicle(vehicle) {
+    public void addVehicle(Vehicle vehicle) {
         this.inventory.add(vehicle);
     }
-    public void remove(vehicle){
+    public void remove(Vehicle vehicle){
 
     }
 }
