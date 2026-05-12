@@ -285,9 +285,7 @@ public static Scanner input = new Scanner(System.in);
 
 
     public static void displayVehicles(ArrayList<Vehicle> vehicles) {
-        for (Vehicle vehicle : vehicles) {
-            System.out.println(vehicle.toString());
-        }
+
    }
 }
 
