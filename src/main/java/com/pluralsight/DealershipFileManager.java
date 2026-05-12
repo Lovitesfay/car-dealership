@@ -1,7 +1,9 @@
 package com.pluralsight;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 
 public class DealershipFileManager {
 
@@ -51,8 +53,9 @@ public class DealershipFileManager {
                 int odometer = Integer.parseInt(vehicleParts[6]);
                 double price = Double.parseDouble(vehicleParts[7]);
 
+
                 //create the vehicle
-                Vehicle theVehicle = new Vehicle(vin, year, make, model, type, color, odometer, price);
+                Vehicle theVehicle = new Vehicle(vin,year, make, model, type, color,odometer,price );
 
                 //add the vehicle to the inventory
                 toyota.addVehicle(theVehicle);
@@ -71,15 +74,52 @@ public class DealershipFileManager {
         return toyota;
     }
 
+
     //stay empty for now but we will revisit later
     public void saveDealership(Dealership dealership){
 
-        //deal with the dealership info for the first line
+        try {
 
-        //deal with each vehicle
+            BufferedWriter inventoryWriter =
+                    new BufferedWriter(new FileWriter(filePath));
+
+            // save dealership info
+            inventoryWriter.write(
+                    dealership.getName() + "|" +
+                            dealership.getAddress() + "|" +
+                            dealership.getPhoneNumber()
+            );
+
+            inventoryWriter.newLine();
+
+            // save vehicles
+            for (Vehicle vehicle : dealership.getAllVehicles()) {
+
+                inventoryWriter.write(
+                        vehicle.getVin() + "|" +
+                                vehicle.getYear() + "|" +
+                                vehicle.getMake() + "|" +
+                                vehicle.getModel() + "|" +
+                                vehicle.getVehicleType() + "|" +
+                                vehicle.getColor() + "|" +
+                                vehicle.getOdometer() + "|" +
+                                vehicle.getPrice()
+                );
+
+                inventoryWriter.newLine();
+            }
+
+            inventoryWriter.close();
+
+            System.out.println("Dealership saved.");
+
+        } catch (Exception e) {
+
+            System.out.println("Error saving file.");
+        }
+    }
 
 
 
     }
 
-}

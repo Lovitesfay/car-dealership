@@ -55,34 +55,78 @@ public class Dealership {
     return results;
     }
 
-    public ArrayList<Vehicle>getVehiclesByMakeModel() {
+    public ArrayList<Vehicle>getVehiclesByMakeModel(String make, String model) {
+
+        ArrayList<Vehicle> results = new ArrayList<>();
+
+        for (Vehicle vehicle : inventory) {
+
+            if (vehicle.getMake().equalsIgnoreCase(make) &&
+                    vehicle.getModel().equalsIgnoreCase(model)) {
+
+                results.add(vehicle);
+            }
 
 
-        return this.inventory;
+        }
+        return results;
     }
 
-    public ArrayList<Vehicle>getVehicleByYear() {
-        getVehicleByYear();
-        return this.inventory;
+    public ArrayList<Vehicle>getVehicleByYear(double min, double max) {
+        ArrayList<Vehicle> results = new ArrayList<>();
+
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getYear() >= min &&
+                    vehicle.getYear() <= max) {
+                results.add(vehicle);
+
+            }
+        }
+    return results;
+    }
+    public ArrayList<Vehicle>getVehiclesByColor(String color) {
+
+        ArrayList<Vehicle> results = new ArrayList<>();
+
+        for (Vehicle vehicle : inventory) {
+
+            if (vehicle.getColor().equalsIgnoreCase(color)) {
+
+                results.add(vehicle);
+            }
+        }
+        return results;
+
     }
 
-    public ArrayList<Vehicle>getVehiclesByColor() {
-        getVehiclesByColor();
-        return this.inventory;
+    public ArrayList<Vehicle>getVehiclesByMileage(double min, double max) {
+
+        ArrayList<Vehicle> results = new ArrayList<>();
+
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getOdometer() >= min &&
+                    vehicle.getOdometer() <= max) {
+                results.add(vehicle);
+
+            }
+        }
+        return results;
     }
+    public ArrayList<Vehicle>getVehicleByType(String type) {
 
-    public ArrayList<Vehicle>getVehiclesByMileage() {
-        getVehiclesByMileage();
-        return this.inventory;
+        ArrayList<Vehicle> results = new ArrayList<>();
 
-    }
-    public ArrayList<Vehicle>getVehicleByType(){
-        getVehicleByType();
-        return this.inventory;
+        for (Vehicle vehicle : inventory) {
 
+            if (vehicle.getVehicleType().equalsIgnoreCase(type) ) {
+
+                results.add(vehicle);
+            }
+        }
+        return results;
     }
     public ArrayList<Vehicle>getAllVehicles(){
-       getAllVehicles();
+
         return this.inventory;
     }
 
