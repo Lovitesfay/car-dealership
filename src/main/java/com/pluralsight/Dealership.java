@@ -81,8 +81,11 @@ public class Dealership {
         return this.inventory;
 
     }
-    public ArrayList<Vehicle>getAllVehicles(){
-       getAllVehicles();
+    public ArrayList<Vehicle>getAllVehicles() {
+
+        for (Vehicle vehicle : inventory) {
+            System.out.println(vehicle);
+        }
         return this.inventory;
     }
 
