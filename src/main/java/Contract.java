@@ -46,4 +46,12 @@ protected double payment;
     public void setVehicleSold(String vehicleSold) {
         this.vehicleSold = vehicleSold;
     }
+
+    public double getTotalPrice() {
+        return 0;
+    }
+
+    public double getMonthlyPayment() {
+        return 0;
+    }
 }
