@@ -1,12 +1,14 @@
+package com.pluralsight;
+
 public class Contract {
 protected String Date;
 protected String CustomerName;
 protected String CustomerEmail;
-protected String vehicleSold;
+protected Vehicle vehicleSold;
 protected double  totalPrice;
 protected double payment;
 
-    public Contract(String date, String customerName, String customerEmail, String vehicleSold, double totalPrice, double payment) {
+    public Contract(String date, String customerName, String customerEmail, Vehicle vehicleSold, double totalPrice, double payment) {
         Date = date;
         CustomerName = customerName;
         CustomerEmail = customerEmail;
@@ -39,11 +41,11 @@ protected double payment;
         CustomerEmail = customerEmail;
     }
 
-    public String getVehicleSold() {
+    public Vehicle getVehicleSold() {
         return vehicleSold;
     }
 
-    public void setVehicleSold(String vehicleSold) {
+    public void setVehicleSold(Vehicle vehicleSold) {
         this.vehicleSold = vehicleSold;
     }
 

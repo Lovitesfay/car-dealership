@@ -85,6 +85,7 @@ public class Vehicle {
     }
 
     public double getPrice() {
+
         return price;
     }
 
