@@ -3,18 +3,14 @@ package com.pluralsight;
 public class Contract {
 protected String Date;
 protected String CustomerName;
-protected String CustomerEmail;
 protected Vehicle vehicleSold;
-protected double  totalPrice;
-protected double payment;
 
-    public Contract(String date, String customerName, String customerEmail, Vehicle vehicleSold, double totalPrice, double payment) {
-        Date = date;
-        CustomerName = customerName;
-        CustomerEmail = customerEmail;
+
+    public Contract(String date, String customerName, Vehicle vehicleSold){
+        this.Date = date;
+        this.CustomerName = customerName;
         this.vehicleSold = vehicleSold;
-        this.totalPrice = totalPrice;
-        this.payment = payment;
+
     }
 
     public String getDate() {
@@ -33,13 +29,6 @@ protected double payment;
         CustomerName = customerName;
     }
 
-    public String getCustomerEmail() {
-        return CustomerEmail;
-    }
-
-    public void setCustomerEmail(String customerEmail) {
-        CustomerEmail = customerEmail;
-    }
 
     public Vehicle getVehicleSold() {
         return vehicleSold;

@@ -15,6 +15,8 @@ public static Scanner input = new Scanner(System.in);
 
     }
 
+
+
     public void display() {
         // create dealership
         this.init();
@@ -37,6 +39,7 @@ public static Scanner input = new Scanner(System.in);
                     7 - List ALL vehicles: 
                     8 - Add a vehicle: 
                     9 - Remove a vehicle: 
+                    10 - Sell / Lease a vehicle
                     99 - Quit: 
                     
                     
@@ -75,6 +78,9 @@ public static Scanner input = new Scanner(System.in);
                 case 9:
                     removeVehicleRequest();
                     break;
+                case 10:
+                    processContractRequest();
+                    break;
                 case 99:
                     appRunning = false;
                     System.out.println("System Exiting...");
@@ -90,6 +96,74 @@ public static Scanner input = new Scanner(System.in);
         }
     }
 
+    public void processContractRequest() {
+
+
+        System.out.println("""
+                ====================================================
+                            SELL / LEASE A VEHICLE:
+                ====================================================
+                """);
+
+        System.out.print(" Enter VIN: ");
+        int vin = input.nextInt();
+        input.nextLine();
+
+        Vehicle vehicleSold = null;
+
+
+        for (Vehicle vehicle : dealership.getAllVehicles()) {
+
+            if (vehicle.getVin() == vin) {
+                vehicleSold = vehicle;
+            }
+
+            System.out.print(" Enter customer name: ");
+            String customerName = input.nextLine();
+
+            System.out.print(" Enter customer email: ");
+            String customerEmail = input.nextLine();
+
+            System.out.println("""
+                    
+                    1 - Sale
+                    2 - Lease
+                    """);
+
+            int choice = input.nextInt();
+
+            ContractFileManager manager =
+                    new ContractFileManager();
+
+            if (choice == 1) {
+
+                SalesContract salesContract =
+                        new SalesContract(
+                                customerName,
+                                customerEmail, vehicleSold
+
+                        );
+
+                System.out.println(salesContract.getTotalPrice());
+
+                manager.saveContract(salesContract);
+
+            } else if (choice == 2) {
+
+                LeaseContract leaseContract =
+                        new LeaseContract(
+                                customerName,
+                                customerEmail, vehicleSold
+                        );
+
+                System.out.println(leaseContract.getTotalPrice());
+                manager.saveContract(leaseContract);
+
+
+            }
+
+        }
+    }
     public void processGetByPriceRequest(){
         System.out.println("""
                 ====================================================

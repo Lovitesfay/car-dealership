@@ -1,17 +1,16 @@
 package com.pluralsight;
 
 public class SalesContract extends Contract {
-    private double salesTaxAmount;
-    private double recordingFee;
-    private double processingFee;
-    private boolean finance;
 
-    public SalesContract(String date, String customerName, String customerEmail, Vehicle vehicleSold, double totalPrice, double payment) {
-        super(date, customerName, customerEmail, vehicleSold, totalPrice, payment);
+    private boolean isFinanced;
 
+    public SalesContract(String date, String customerName, Vehicle vehicleSold) {
+        super(date, customerName, vehicleSold);
+
+        this.isFinanced = isFinanced;
     }
 
-    @Override
+
     public double getTotalPrice() {
         double price = getVehicleSold().getPrice();
 
@@ -32,7 +31,7 @@ public class SalesContract extends Contract {
 
     public double getMonthlyPayment() {
 
-        if (!finance) {
+        if (!isFinanced) {
             return 0;
         }
 
