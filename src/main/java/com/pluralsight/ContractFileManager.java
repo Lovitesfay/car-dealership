@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class ContractFileManager {
-
+// save
     public void saveContract(Contract contract){
 
 
