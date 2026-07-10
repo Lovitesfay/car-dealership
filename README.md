@@ -8,6 +8,26 @@ The program reads vehicle inventory data from a CSV file and allows the user to 
 
 ---
 
+# 🚗 Start the Engine
+
+Ready to manage the dealership? 🔑
+
+## 🏁 Run the Application
+
+1. Clone the repository.
+2. Open the project in **IntelliJ IDEA**.
+3. Make sure **Java** and **Maven** are installed.
+4. Run the `ToyotaApp` class.
+5. Use the console menu to search vehicles, manage inventory, and process sales or leases.
+
+## 🚘 Take It for a Test Drive
+
+Search Inventory → Find a Vehicle → Sell or Lease → Generate Contract → Save Data
+
+**You're ready to run the dealership! 🚗💨**
+
+---
+
 # Features
 
 ## Vehicle Search Options
